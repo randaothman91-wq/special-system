@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Data Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Research Data Finder</h1>
+      <p>Quickly discover open datasets by topic, format, and source.</p>
+    </header>
+
+    <main class="layout">
+      <section class="controls" aria-label="Search controls">
+        <label for="searchInput">Search datasets</label>
+        <input id="searchInput" type="search" placeholder="Try: climate, health, satellite..." />
+
+        <div class="filters">
+          <label for="topicFilter">Topic</label>
+          <select id="topicFilter">
+            <option value="all">All topics</option>
+          </select>
+
+          <label for="formatFilter">Format</label>
+          <select id="formatFilter">
+            <option value="all">All formats</option>
+          </select>
+        </div>
+
+        <p id="resultCount" class="result-count" aria-live="polite"></p>
+      </section>
+
+      <section>
+        <div id="datasetGrid" class="dataset-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="datasetCardTemplate">
+      <article class="dataset-card">
+        <h2 class="dataset-title"></h2>
+        <p class="dataset-description"></p>
+        <ul class="dataset-meta">
+          <li><strong>Topic:</strong> <span class="meta-topic"></span></li>
+          <li><strong>Format:</strong> <span class="meta-format"></span></li>
+          <li><strong>Source:</strong> <span class="meta-source"></span></li>
+        </ul>
+        <a class="dataset-link" target="_blank" rel="noopener noreferrer">Open dataset</a>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
